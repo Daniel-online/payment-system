@@ -1,0 +1,32 @@
+{
+  "name": "payment-system",
+  "version": "1.0.0",
+  "description": "A complete node.js system for payments, with points, expiration date, transfers, payments and deposits.",
+  "main": "main.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "npm start test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daniel-online/payment-system.git"
+  },
+  "keywords": [
+    "payment;",
+    "node.js"
+  ],
+  "author": "Daniel Lourenco Affonso",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Daniel-online/payment-system/issues"
+  },
+  "homepage": "https://github.com/Daniel-online/payment-system#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mocha": "^11.1.0",
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.1.7"
+  }
+}
