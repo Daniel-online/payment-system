@@ -4,4 +4,4 @@ import deposit from '../controllers/DepositController';
 
 router.post('/deposit', deposit);
 
-module.exports=router;
+export {router};

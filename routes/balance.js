@@ -4,4 +4,4 @@ import balance from '../controllers/BalanceController';
 
 router.post('/balance', balance);
 
-module.exports=router;
+export {router};

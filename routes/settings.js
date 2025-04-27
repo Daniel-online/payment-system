@@ -5,4 +5,4 @@ import {pointsRate, limitValue} from '../controllers/SettingsController';
 router.post('/settings/rate', pointsRate);
 router.post('/settings/limit', limitValue)
 
-module.exports=router;
+export {router}

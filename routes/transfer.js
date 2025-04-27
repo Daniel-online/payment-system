@@ -4,4 +4,4 @@ import transfer from '../controllers/TransferController';
 
 router.post('/transfer', transfer);
 
-module.exports=router;
+export {router}

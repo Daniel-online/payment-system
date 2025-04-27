@@ -4,5 +4,5 @@ import showSpent from '../controllers/ShowSpentController';
 
 router.post('/show-spent', showSpent);
 
-module.exports=router;
+export {router};
 

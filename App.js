@@ -1,8 +1,10 @@
+// app.js
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const { sequelize } = require('./config/database');
 
-// Importar as rotas
+// Import routes
 const authRoutes = require('./routes/auth');
 const fundsRoutes = require('./routes/funds');
 const paymentsRoutes = require('./routes/payments');
@@ -11,9 +13,11 @@ const balanceRoutes = require('./routes/balance');
 const settingsRoutes = require('./routes/settings');
 
 const app = express();
+
+// Middleware
 app.use(bodyParser.json());
 
-// Configurar rotas
+// Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/funds', fundsRoutes);
 app.use('/api/payments', paymentsRoutes);
@@ -21,5 +25,17 @@ app.use('/api/transfers', transfersRoutes);
 app.use('/api/balance', balanceRoutes);
 app.use('/api/settings', settingsRoutes);
 
-// Exportar o app
-module.exports = app;
+// Start server after DB is ready
+const PORT = process.env.PORT || 3000;
+
+sequelize.sync()
+  .then(() => {
+    console.log('Database synced successfully.');
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  })
+  .catch(err => {
+    console.error('Failed to sync database:', err);
+  });
+

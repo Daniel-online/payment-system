@@ -2,7 +2,7 @@
   "name": "payment-system",
   "version": "1.0.0",
   "description": "A complete node.js system for payments, with points, expiration date, transfers, payments and deposits.",
-  "main": "main.js",
+  "main": "app.js",
   "directories": {
     "test": "tests"
   },
